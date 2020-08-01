@@ -1,5 +1,7 @@
-import User from '../models/User';
 import { getRepository } from 'typeorm';
+import { hash } from 'bcryptjs';
+
+import User from '../models/User';
 
 interface Request {
   name: string;
@@ -19,9 +21,17 @@ class CreateUserService {
       throw Error('Email adress already used.');
     }
 
-    const user = usersRepository.create({ name, email, password });
+    const hashedPassword = await hash(password, 8);
+
+    const user = usersRepository.create({
+      name,
+      email,
+      password: hashedPassword,
+    });
 
     await usersRepository.save(user);
+
+    delete user.password;
 
     return user;
   }
