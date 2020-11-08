@@ -26,7 +26,7 @@ describe('CreateAppointement', () => {
     const fakeHashProvider = new FakeHashProvider();
     const createUser = new CreateUserService(fakeUsersRepository, fakeHashProvider);
 
-    const user = await createUser.execute(
+    await createUser.execute(
       { 
         name: "John Doe",
         email: "johndoe@gmail.com",
