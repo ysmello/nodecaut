@@ -21,6 +21,7 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
+    "prettier": true,
     "camelcase": ["error", { "allow": "aa_bb" }],
     "class-methods-use-this": "off",
     "@typescript-eslint/no-unused-vars": [
