@@ -15,7 +15,7 @@ class ListProviderService {
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
 
-    @inject('RedisCacheProvider')
+    @inject('CacheProvider')
     private cacheProvider: ICacheProvider,
   ) {}
 

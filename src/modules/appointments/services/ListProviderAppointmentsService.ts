@@ -18,7 +18,7 @@ class ListProviderAppointmentsService {
     @inject('AppointmentsRepository')
     private appointmentsRepository: IAppointmentsRepository,
 
-    @inject('RedisCacheProvider')
+    @inject('CacheProvider')
     private cacheProvider: ICacheProvider,
   ) {}
 
